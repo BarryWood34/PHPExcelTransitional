@@ -1,18 +1,13 @@
 {
     "name": "phpoffice/phpexcel",
-    "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
-    "keywords": ["PHP","Excel","OpenXML","xlsx","xls","spreadsheet"],
-    "homepage": "https://github.com/PHPOffice/PHPExcel",
+    "description": "Transitional fork of ARCHIVED PHPExcel - only includes fixes for PHP7.4 compatibility",
+    "keywords": [],
+    "homepage": "https://github.com/darrenedale/PHPExcelTransitional",
     "type": "library",
     "license": "LGPL-2.1",
     "authors": [
         {
-            "name": "Maarten Balliauw",
-            "homepage": "http://blog.maartenballiauw.be"
-        },
-        {
-            "name": "Mark Baker",
-            "homepage": "http://markbakeruk.net"
+            "name": "Darren Edale",
         },
         {
             "name": "Franck Lefevre",
@@ -23,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^5.2|^7.0",
+        "php": "^7.4",
         "ext-mbstring": "*",
         "ext-xml": "*",
         "ext-xmlwriter": "*"
