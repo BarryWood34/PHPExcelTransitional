@@ -1621,17 +1621,15 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 //    If the address row is -1 and the column is 0, (which translates as $B$65536) then this is a continuation
                 //        note from the previous cell annotation. We're not yet handling this, so annotations longer than the
                 //        max 2048 bytes will probably throw a wobbly.
-                $row = self::getInt2d($recordData, 0);
-                $extension = true;
-                $cellAddress = array_pop(array_keys($this->phpSheet->getComments()));
+                $row         = self::getInt2d($recordData, 0);
+                $extension   = true;
+				$commentKeys = array_keys($this->phpSheet->getComments());
+				$cellAddress = array_pop($commentKeys);
             }
-//            echo 'Note Address=', $cellAddress,'<br />';
 
             $cellAddress = str_replace('$', '', $cellAddress);
             $noteLength = self::getInt2d($recordData, 4);
             $noteText = trim(substr($recordData, 6));
-//            echo 'Note Length=', $noteLength,'<br />';
-//            echo 'Note Text=', $noteText,'<br />';
 
             if ($extension) {
                 //    Concatenate this extension with the currently set comment for the cell
@@ -1641,7 +1639,6 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             } else {
                 //    Set comment for the cell
                 $this->phpSheet->getComment($cellAddress)->setText($this->parseRichText($noteText));
-//                                                    ->setAuthor($author)
             }
         }
 
