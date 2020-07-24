@@ -2501,7 +2501,6 @@ class PclZip
 
                 // ----- Call the header generation
                 if (($v_result = $this->privWriteFileHeader($p_header)) != 1) {
-                    @fclose($v_file);
                     return $v_result;
                 }
 
@@ -3517,7 +3516,6 @@ class PclZip
         // ----- Creates a temporary file
         $v_gzip_temp_name = PCLZIP_TEMPORARY_DIR.uniqid('pclzip-').'.gz';
         if (($v_dest_file = @fopen($v_gzip_temp_name, "wb")) == 0) {
-            fclose($v_file);
             PclZip::privErrorLog(PCLZIP_ERR_WRITE_OPEN_FAIL, 'Unable to open temporary file \''.$v_gzip_temp_name.'\' in binary write mode');
             return PclZip::errorCode();
         }
