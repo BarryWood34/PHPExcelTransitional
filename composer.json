@@ -1,5 +1,5 @@
 {
-    "name": "darrenedale/phpexceltransitional",
+    "name": "phpoffice/phpexcel",
     "description": "Transitional fork of ARCHIVED PHPExcel - only includes fixes for PHP7.4 compatibility",
     "keywords": [],
     "homepage": "https://github.com/darrenedale/PHPExcelTransitional",
