@@ -29,7 +29,7 @@ class PHPExcel_Shared_OLE_ChainedBlockStream
 {
     /**
      * The OLE container of the file that is being read.
-     * @var OLE
+     * @var PHPExcel_Shared_OLE
      */
     public $ole;
 
@@ -112,6 +112,20 @@ class PHPExcel_Shared_OLE_ChainedBlockStream
         return true;
     }
 
+	/**
+	 * Minimal implementation required for PHP7.4 compatibility.
+	 *
+	 * @param int $opt
+	 * @param int $arg1
+	 * @param int $args
+	 *
+	 * @return bool false
+	 */
+    public function stream_set_option(int $opt, int $arg1, int $args): bool
+	{
+		return false;
+	}
+
     /**
      * Implements support for fclose().
      *
@@ -172,7 +186,7 @@ class PHPExcel_Shared_OLE_ChainedBlockStream
             $this->pos = $offset;
         } elseif ($whence == SEEK_CUR && -$offset <= $this->pos) {
             $this->pos += $offset;
-        } elseif ($whence == SEEK_END && -$offset <= sizeof($this->data)) {
+        } elseif ($whence == SEEK_END && -$offset <= strlen($this->data)) {
             $this->pos = strlen($this->data) + $offset;
         } else {
             return false;
