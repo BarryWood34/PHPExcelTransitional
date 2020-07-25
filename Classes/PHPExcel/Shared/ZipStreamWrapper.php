@@ -95,6 +95,20 @@ class PHPExcel_Shared_ZipStreamWrapper
         return true;
     }
 
+	/**
+	 * Minimal implementation for PHP7.4 compatibility.
+	 *
+	 * @param int $option
+	 * @param int $arg1
+	 * @param int $arg2
+	 *
+	 * @return bool false.
+	 */
+    public function stream_set_option(int $option, int $arg1, int $arg2): bool
+	{
+		return false;
+	}
+
     /**
      * Implements support for fstat().
      *
