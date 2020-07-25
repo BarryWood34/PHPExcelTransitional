@@ -5,6 +5,11 @@
     "homepage": "https://github.com/darrenedale/PHPExcelTransitional",
     "type": "library",
     "license": "LGPL-2.1",
+    "version": "1.9.1",
+    "dist": {
+        "url": "https://github.com/darrenedale/PHPExcelTransitional/archive/1.9.1.zip",
+        "type": "zip"
+    },
     "authors": [
         {
             "name": "Darren Edale"
