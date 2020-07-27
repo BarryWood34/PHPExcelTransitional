@@ -4612,7 +4612,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                     $offset += 4;
                     // offset: var; size: $us; character array of the URL, no Unicode string header, always 16-bit characters, zero-terminated
                     $url = self::encodeUTF16(substr($recordData, $offset, $us - 2), false);
-                    $nullOffset = strpos($url, 0x00);
+                    $nullOffset = strpos($url, "\x00");
                     if ($nullOffset) {
                         $url = substr($url, 0, $nullOffset);
                     }
