@@ -22,6 +22,17 @@
 * @version    ##VERSION##, ##DATE##
 **************************************************************************************
 
+2019-07-28 (v1.9.2)
+- Bugfix:   (darrenedale)                       - PHP7.4 Fixed use of char codepoint (int) in strpos
+- Bugfix:   (darrenedale)                       - PHP7.4 All uses of implode() with no glue now use "" for glue
+- Bugfix:   (darrenedale)                       - PHP7.4 Added stream_set_option() method to registered stream handlers.
+- Bugfix:   (darrenedale)                       - PHP7.4 Fixed use of numeric value as if it were a string with []
+- Bugfix:   (darrenedale)                       - PHP7.4 Fixed most uses of undefined variables.
+- Bugfix:   (darrenedale)                       - PHP7.4 Removed all uses of magic quotes functions.
+- Bugfix:   (darrenedale)                       - PHP7.4 Fixed all instances of illegal pass-by-reference.
+- Bugfix:   (darrenedale)                       - PHP7.4 Fixed all instances of array/string access using {}.
+- Bugfix:   (darrenedale)                       - PHP7.4 Updated composer.json.
+- Bugfix:   (darrenedale)                       - PHP7.4 Updated README.md.
 
 Planned for 1.8.2
 - Bugfix:   (MBaker)                            - Fix to getCell() method when cell reference includes a worksheet reference
